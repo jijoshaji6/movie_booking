@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <span><a class="btn btn-outline-danger" (click)="back()" >Back</a></span>
+    <h3 class="text-center mb-4">Book Movie</h3>
+    <div class="col-md-6">
+      <div class="card mb-3">
+        <img [src]="movie.bgImage" class="card-img-top" alt="image">
+        <div class="card-body">
+          <h5 class="card-title text-center ">{{ movie.movieName }}</h5>
+          <p class="card-text text-center">{{ movie.genre }}</p>
+          <p class="card-text text-center">{{ movie.duration }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h6 class="mb-4">Select Date:</h6>
+      <span *ngFor="let date of movie.date" class="pe-3">
+        <button class="btn btn-secondary mb-4" [ngClass]="selectedDate == date ? 'btn-success' : 'btn-secondary' " (click)="selectDate(date)">{{date}}</button>
+      </span>
+      <h6 class="mb-4">Select Time:</h6>
+      <span *ngFor="let time of movie.time" class="pe-3">
+        <button class="btn btn-secondary mb-5" [ngClass]="selectedTIme == time ? 'btn-success' : 'btn-secondary' " (click)="selectTime(time)">{{time}}</button>
+      </span>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h6 class="mb-4">Number Of Seats:</h6>
+          </div>
+          <div class="col-md-9">
+            <select class="form-select mb-5 shadow-none">
+              <option selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="d-grid">
+        <button class="btn btn-outline-warning">Book Now</button>
+      </div>
+    </div>
+  </div>
+</div>

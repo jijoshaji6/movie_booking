@@ -1,0 +1,19 @@
+<div class="card bg-dark text-white ">
+    <img [src]="movie.bgImage" class="card-img opacity-25" alt="">
+    <div class="card-img-overlay d-flex justify-content-center flex-column">
+        <div class="container">
+            <div class="row ">
+                <div class="col-4" style="max-width: 18rem;">
+                    <img [src]="movie.image" class="card-img " alt="...">
+                </div>
+                <div class="col-8 d-flex justify-content-center flex-column">
+                    <h2 class="card-title" style="font-size:3vw;">{{ movie.movieName }}</h2>
+                    <p class="card-text" style="font-size:1.5vw;">{{ movie.genre }}</p>
+                    <p class="card-text" style="font-size:1.5vw;">{{ movie.duration }}</p>
+                    <p class="card-text" style="font-size:1.5vw;">{{ movie.description }}</p>
+                    <p class="card-text" ><a class="btn btn-outline-danger" (click)="bookingPage(movie.id)">Book Ticket</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

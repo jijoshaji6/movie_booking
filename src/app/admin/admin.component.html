@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row text-center">
+        <h3 class=" mb-5">Welcome Admin</h3>
+        <span>
+            <button class="btn btn-outline-warning" routerLink="/add">Add Movie</button>
+        </span>
+    </div>
+</div>
+<div class="container mb-4 ">
+    <div class="row">
+        <div class=" col-12 col-md-6 col-lg-3  mt-5" *ngFor="let movie of movieList">
+            <a class=" text-decoration-none pe-auto" >
+                <div class="card" style="width: 18rem;">
+                    <img [src]="movie.image" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{movie.movieName}}</h5>
+                        <p class="card-text">{{movie.genre}}</p>
+                        <div class="row">
+                        <div class="col-md-6 d-grid">
+                            <button class="btn btn-outline-warning" (click)="editPage(movie.id)">Edit</button>
+                        </div>
+                        <div class="col-md-6 d-grid">
+                            <button class="btn btn-outline-danger" (click)="changeButton()">{{buttonText}}</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
